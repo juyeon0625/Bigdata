@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "dice1 <- sample(1:6, 1000, replace=TRUE)\ndice2 <- sample(1:6, 1000, replace=TRUE)\ndice3 <- sample(1:6, 1000, replace=TRUE)\ndice4 <- sample(1:6, 1000, replace=TRUE)\ndice5 <- sample(1:6, 1000, replace=TRUE)\ndice6 <- sample(1:6, 1000, replace=TRUE)\n\nchisq.test(table(dice1))\nchisq.test(table(dice2))\nchisq.test(table(dice3))\nchisq.test(table(dice4))\nchisq.test(table(dice5))\nchisq.test(table(dice6))\n\n\n\n\n\n\n\n",
+    "created" : 1478530225521.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "845938987",
+    "id" : "5AA55A25",
+    "lastKnownWriteTime" : 1478540510,
+    "last_content_update" : 1478684223238,
+    "path" : "C:/Users/juyeon/Desktop/R/10주차/10주차/2.R",
+    "project_path" : "2.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

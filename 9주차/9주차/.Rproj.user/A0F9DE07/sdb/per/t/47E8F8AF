@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "read.csv(\"es.csv\", header = TRUE)\ngetwd()\n\n\nt <- c(23, 26, 27, 28)\nch <- c(25, 26, 29, 32, 33)\nb <- c(15, 16, 18, 22, 26, 29)\n\nsum(t)\nsum(ch)\nsum(b)\n\nmr <- c(934)\nmrr <- c(956)\nml <- c(113)\nmll <- c(98)\nmrl <- c(20)\nmrlrl <- c(13)\n\nwr <- c(1070)\nwrr <- c(1048)\nwl <- c(92)\nwll <- c(107)\nwrl <- c(8)\nwrlrl <- c(15)\n\n((34 - (148*27) / 300) ^2) / ((148*72)/300)\n((61 - (148*101) / 300) ^2) / ((148*72)/300)\n((53 - (148*127) / 300) ^2) / ((148*72) /300)\n((38 - (152*72) / 300 ^2))",
+    "created" : 1477985190257.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "969418031",
+    "id" : "47E8F8AF",
+    "lastKnownWriteTime" : 1478156729,
+    "last_content_update" : 1478156729950,
+    "path" : "C:/Users/juyeon/Desktop/R/9주차/9주차/11.1.R",
+    "project_path" : "11.1.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

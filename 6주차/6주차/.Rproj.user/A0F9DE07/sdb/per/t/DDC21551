@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "primality <-function(x) {\n  \n  stopifnot(x >= 2) # x가2보다작다면에러를반환\n  limit <-trunc(sqrt(x) + 1)\n  testvec<-2:limit\n  results <-x %% testvec\n  check <-any(results == 0)\n  outcome <-\"Yes.\"\n  if(check == TRUE) outcome <-\"No.\"\n  if(x == 2) outcome <-\"Yes.\"\n\n  return (outcome)\n  \n}\n  \ne <- 0\n\nfor(i in 3:10000){\n  if(primality(i) == \"Yes.\") {\n    e = e + 1\n    cat(i,\" \") \n    if(e %% 20 == 0) {cat(\"\\n\")}\n  }\n}\ncat(\"소수개수 : \", e, \"개\")\n\n",
+    "created" : 1476342660947.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3509874003",
+    "id" : "DDC21551",
+    "lastKnownWriteTime" : 1477476199,
+    "last_content_update" : 1477476199734,
+    "path" : "C:/Users/juyeon/Desktop/R/6주차/6주차/1.R",
+    "project_path" : "1.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

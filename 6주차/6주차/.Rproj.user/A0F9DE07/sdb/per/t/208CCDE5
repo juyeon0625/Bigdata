@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "shop <- read.csv(\"shop_training27.csv\", header = TRUE, skip = 1)\n\nsummary(shop)\nhead(shop)\nattach(shop)\n\n\nanni <- NULL\n\nfor (i in anniversary){\n  ifelse(i == \"평일\", anni <- c(anni, 0), anni <- c(anni, 1))  #평일일 때는 0, 국경일일 때는 1\n}\nshop$anniversary <- anni  #0과 1로 설정한 anniverary를 shop에 있는 anniversary에 설정 \n\n\nisH <- NULL\n\nfor (i in isHoliday){\n  ifelse(i == \"FALSE\", isH <- c(isH, 0), isH <- c(isH, 1) )  #휴일이 아닐 때는 0, 휴일일 때에는 1\n}\nshop$isHoliday <- isH  #0과 1로 설정한 isHoliday를 shop에 있는 isHoliday에 설정\n\n\nbefore <- NULL\n\nfor (i in before_isHoliday){\n  ifelse(i == \"FALSE\", before <- c(before, 0), before <- c(before, 1))  #휴일 전 날이 아닐 때는 0, 휴일 전 날일 때는 1\n}\nshop$before_isHoliday <- before  #0과 1로 설정한 before_isHoliday를 shop에 있는 before_isHoliday에 설정\n\n\nafter <- NULL\n\nfor (i in after_isHoliday){\n  ifelse(i == \"FALSE\", after <- c(after, 0), after <- c(after, 1))  #휴일 다음 날이 아닐 때는 0, 휴일 다음 날일 때는 1\n}\nshop$after_isHoliday <- after\n\n\nrainy <- NULL\n\nfor (i in rain){\n  ifelse(i == \"TRUE\", rainy <- c(rainy, 1), rainy<- c(rainy, 0))  #비가 오는 날 1, 비가 오지 않는날 0\n}\nshop$rain <- rainy\n\n\nfoggy <- NULL\n\nfor (i in fog){\n  ifelse(i == \"TRUE\", foggy <- c(foggy, 0), foggy <- c(foggy, 1))  #안개가 낀 날 0, 안개가 끼지 않은 날 1\n}\nshop$fog <- foggy\n\n  \n\n\ncor(isH, class_orders)\ncor(before, class_orders)\ncor(after, class_orders)\ncor(rainy, class_orders)\ncor(foggy, class_orders)\n\n\n\n\n\n\n\n",
+    "created" : 1476344797279.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "800248002",
+    "id" : "208CCDE5",
+    "lastKnownWriteTime" : 1477489727,
+    "last_content_update" : 1477489727639,
+    "path" : "C:/Users/juyeon/Desktop/R/6주차/6주차/2.R",
+    "project_path" : "2.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

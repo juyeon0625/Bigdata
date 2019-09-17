@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "head(gssdata)\nsummary(gssdata)\ncor(gssdata,(,1:5))\n\nscale(gssdata)\n\n돈은 많이 받는 사람이 적음\n나이는 19세부터 88세까지 있으며 대부분 30에서 50정도 사이에 있음\n직업만족도는 1부터 4까지 있으며 중간값이 2이며 불만족스러운것이 더 많다\n일한기간은 \n안전도 1이 제일 안전하며 거의 안전하다고 나옴\n\nattach(gssdata)\nmin(rincome)\nmean(rincome)\nmedian(rincome)\nmode(rincome)\nmax(rincome)\nsort(rincome)\n\n나이는 20대중반부터 60대까지 분포해있는데 40대초반이 제일 많ㅇ\n직업만족도는 대체적으로 만족하고 있다.\n대부분 2년3년내에 퇴직한다\n\npairs(gssdata)\nplot(satjob1,jobsecok)\nplot(jobsecok, satjob1)\nplot(satjob1, jobsecok, abline(lm(jobsecok~satjob1)))\njitter(gssdata)\njitter(satjob1, jobsecok)\njitter(gssdata)\n\nattach(gssdata)\ngssdata_ji = data.frame(jitter(satjob1),jitter(jobsecok))\nplot(gssdata_ji)\n",
+    "created" : 1475738110308.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2950114838",
+    "id" : "3DA09947",
+    "lastKnownWriteTime" : 1476195729,
+    "last_content_update" : 1476195729307,
+    "path" : "C:/Users/juyeon/Desktop/R/5주차/5주차/1-2.R",
+    "project_path" : "1-2.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : true,
+    "source_window" : "",
+    "type" : "r_source"
+}

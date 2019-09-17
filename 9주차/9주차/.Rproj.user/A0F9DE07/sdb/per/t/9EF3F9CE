@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "options(digits = 5)\nheight <- rnorm(500000, 171, 15)\nweight <- rnorm(500000, 70, 20)\n\nplot(height, weight, main = \"키와 몸무게 산포도\")\ncor(weight, height)\n\nheight <- sample(height, 2000)\nweight <- sample(weight, 2000)\nplot(height, weight, main = \"키와 몸무게 산포도(2000 samples)\")\ncor(height, weight)\n\nheights <- sort(height)\nweights <- sort(weight)\nplot(heights, weights, main = \"키와 몸무게 산포도(sorted 2000 samples)\")\ncor(heights, weights)\n\nplot(jitter(weights, 500), jitter(heights, 500), main = \"키와 몸무게 산포도(sample + jitter)\")\ncor(heights, weights)\n\n\n",
+    "created" : 1478044665993.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3400837612",
+    "id" : "9EF3F9CE",
+    "lastKnownWriteTime" : 1478093013,
+    "last_content_update" : 1478093013184,
+    "path" : "C:/Users/juyeon/Desktop/R/9주차/9주차/2.R",
+    "project_path" : "2.R",
+    "properties" : {
+        "tempName" : "Untitled3"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

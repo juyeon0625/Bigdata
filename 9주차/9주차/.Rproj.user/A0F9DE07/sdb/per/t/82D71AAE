@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "?cor\ngov <- c(1, 2, 3, 4, 5)\nx <- c(1, 2, 3, 4, 5)\ny <- c(5, 3, 1, 4, 2)\n\ncor.test(gov, x, method=\"spearman\")\ncor.test(gov, y, method=\"spearman\")\ncor.test(x, y,method = \"spearman\")\n\n",
+    "created" : 1478047238760.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1168328976",
+    "id" : "82D71AAE",
+    "lastKnownWriteTime" : 1478093008,
+    "last_content_update" : 1478093008246,
+    "path" : "C:/Users/juyeon/Desktop/R/9주차/9주차/3.R",
+    "project_path" : "3.R",
+    "properties" : {
+        "tempName" : "Untitled3"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

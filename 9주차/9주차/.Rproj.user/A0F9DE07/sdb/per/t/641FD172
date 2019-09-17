@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "iris <- read.table(\"iris.txt\", header = TRUE)\n\ndata(\"iris\")\nattach(iris)\nplot(iris)\n\ni <- data.frame(Sepal.Length, Sepal.Width , Petal.Length, Petal.Width)\ncor(i)\n\n\nrequire(ggplot2)\nlibrary(ggplot2)\nex_graph = ggplot(iris, aes(Sepal.Length, Sepal.Width))\nex_graph + geom_point(aes(colour = Species))\nex_graph + geom_point(aes(colour = Species)) + ggtitle(\"ggplot1\") + stat_smooth(method = \"lm\")\nex_graph + geom_point(aes(colour = Species)) + ggtitle(\"Facet1\") + stat_smooth(method = \"lm\") + facet_grid(~Species)\nex_graph + geom_point(aes(colour = Species)) + ggtitle(\"Facet1\") + stat_smooth(method = \"lm\") + w_rap(~Species)\n\nex_graph = ggplot(iris, aes(Petal.Length, Petal.Width))\nex_graph + geom_point(aes(colour = Species))\nex_graph + geom_point(aes(colour = Species)) + ggtitle(\"ggplot2\") + stat_smooth(method = \"lm\")\nex_graph + geom_point(aes(colour = Species)) + ggtitle(\"Facet2\") + stat_smooth(method = \"lm\") + facet_grid(~Species)\nex_graph + geom_point(aes(colour = Species)) + ggtitle(\"Facet1\") + stat_smooth(method = \"lm\") + w_rap(~Species)\n\n\n",
+    "created" : 1477552840769.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2823409848",
+    "id" : "641FD172",
+    "lastKnownWriteTime" : 1478093017,
+    "last_content_update" : 1478093017681,
+    "path" : "C:/Users/juyeon/Desktop/R/9주차/9주차/1.R",
+    "project_path" : "1.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

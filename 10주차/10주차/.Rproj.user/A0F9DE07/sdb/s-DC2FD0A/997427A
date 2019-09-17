@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "jc_ex <- (76*123)/250\nwc_ex <- (104*123)/250\ncc_ex <- (70*123)/250\njh_ex <- (76*127)/250\nwh_ex <- (104*127)/250\nch_ex <- (70*127)/250\n\njc <- (43-jc_ex)^2 / jc_ex\nwc <- (51-wc_ex)^2 / wc_ex\ncc <- (29-cc_ex)^2 / cc_ex\njh <- (33-jh_ex)^2 / jh_ex\nwh <- (53-wh_ex)^2 / wh_ex\nch <- (41-ch_ex)^2 / ch_ex\n\nx2 <- jc + wc + cc + jh + wh + ch\n\nv <- sqrt(x2 / (250 * (min(3, 2)-1)))\n\n\n\n\n",
+    "created" : 1478531812674.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "224508569",
+    "id" : "997427A",
+    "lastKnownWriteTime" : 1478595855,
+    "last_content_update" : 1478595855396,
+    "path" : "C:/Users/juyeon/Desktop/R/10주차/10주차/3.R",
+    "project_path" : "3.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

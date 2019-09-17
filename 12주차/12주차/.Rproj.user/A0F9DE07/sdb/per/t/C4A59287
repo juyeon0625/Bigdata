@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "cus1 <- c(5, NA, 4, NA, 1, 0, 3)\ncus2 <- c(4, 4, 4, NA, NA, NA, 1)\ncus3 <- c(5, 4, NA, 1, 2, NA, 3)\ncus4 <- c(1, 2, 1, 4, 3, 5, 2)\ncus5 <- c(0, 1, NA, 3, 5, 5, NA)\ncus6 <- c(NA, 2, NA, NA, 4, 4, 2)\ncus_a <- c(5, NA, NA, 1, NA, NA, 2)\n\ndata <- data.frame(rbind(cus1, cus2, cus3, cus4, cus5, cus6, cus_a))\ncolnames(data) <- c(\"pro1\", \"pro2\", \"pro3\", \"pro4\", \"pro5\", \"pro6\", \"pro7\")\nattach(data)\n\nlength(cus1)\n##################고객의 평균 평점 \nv_ <- function(x){\n\n  x<- x[!is.na(x)]\n  rate <- 1/length(x) * sum(x)\n  return(rate)\n}\n\nv_(cus1)\nv_(cus2)\nv_(cus3)\nv_(cus4)\nv_(cus5)\nv_(cus6)\nv_(cus_a)\n\n################ 고객과의 유사성을 나타내는 가중치\nw <- function(x, y){\n  x <- as.vector(x)\n  y <- as.vector(y)\n  \n  rated <- is.finite(x) & is.finite(y)\n  common <- which(rated)\n  \n  target <- x[common] - v_(x)\n  customer <- y[common] - v_(y)\n  \n  up <- sum(target * customer, na.rm=TRUE)\n  \n  down <- sqrt(sum(target^2, na.rm=TRUE) * sum(customer^2, na.rm=TRUE))\n  \n  w_ <- as.vector(up/down)\n  \n  return(w_)\n  \n}\n\nw(cus_a, cus1)\nw(cus_a, cus2)\nw(cus_a, cus3)\nw(cus_a, cus4)\nw(cus_a, cus5)\nw(cus_a, cus6)\n\n############## 가중치의 절대값들의 합 1 \n\nk <- 1/sum(abs(c(w(cus_a, cus1), w(cus_a, cus2), w(cus_a, cus3),\n                 w(cus_a, cus4), w(cus_a, cus5), w(cus_a, cus6))))\n\n############# 목표고객에 대한 상품의 평점 추정치\n\np <- function(d, a, j){\n  \n  d <- data\n  double <- 0\n  length(double) <- ncol(d) - 1\n  avgs <- NULL\n  prod <- NULL\n  \n  double[i] <- if(!identical(a, d[,i])) {w(a, d[,i])} else{0}\n    \n  cat(\"w(cus_a, \", i, \") :\", w(a, d[,i]), \"\\n\")\n\n  \n  for(i in 1:length(d)){\n    avgs <- c(avgs, v_(d[,i]))\n    prod <- p(prod, d[j, i])\n    cat(\"average for\", i, \"th colum is\", v_(d[,i]), \",\", j, \"th product's expected rating is\", d[j ,i], \"\\n\")\n    \n  }\n  r <- v_(a) + k * sum(double * (prod - avgs), na.rm=TRUE)\n  return(r)\n}\n\np(data, data[,7], 2)\np(data, data[,7], 3)\np(data, data[,7], 4)\np(data, data[,7], 5)\np(data, data[,7], 6)\n",
+    "created" : 1479369194065.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1094620232",
+    "id" : "C4A59287",
+    "lastKnownWriteTime" : 1479911085,
+    "last_content_update" : 1479911085942,
+    "path" : "C:/Users/juyeon/Desktop/R/12주차/12주차/2.R",
+    "project_path" : "2.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "data1 <- read.csv(\"d:\\\\shops_training27.csv\", header=TRUE)\ndata2 <- read.csv(\"d:\\\\shops_test27.csv\", header=TRUE)\n\n\n#################### ????  1\ndata1$anniversary <- ifelse(data1$anniversary == \"????\", 0, 1)\ndata1$before_anniversary <- ifelse(data1$before_anniversary == \"????\", 0, 1)\ndata1$after_anniversary <- ifelse(data1$after_anniversary == \"????\", 0, 1)\n\ndata2$anniversary <- ifelse(data2$anniversary == \"????\", 0, 1)\ndata2$before_anniversary <- ifelse(data2$before_anniversary == \"????\", 0, 1)\ndata2$after_anniversary <- ifelse(data2$after_anniversary == \"????\", 0, 1)\n\ndata1$isHoliday <- ifelse(data1$isHoliday == TRUE, 1, 0)\ndata1$before_isHoliday <- ifelse(data1$before_isHoliday == TRUE, 1, 0)\ndata1$after_isHoliday <- ifelse(data1$after_isHoliday == TRUE, 1, 0)\n\ndata2$isHoliday <- ifelse(data2$isHoliday == TRUE, 1, 0)\ndata2$before_isHoliday <- ifelse(data2$before_isHoliday == TRUE, 1, 0)\ndata2$after_isHoliday <- ifelse(data2$after_isHoliday == TRUE, 1, 0)\n\n#################### ?Ȱ?, ?? 1\ndata1$fog <- ifelse(data1$fog == TRUE, 1, 0)\ndata1$rain <- ifelse(data1$rain == TRUE, 1, 0)\n\ndata2$fog <- ifelse(data2$fog == TRUE, 1, 0)\ndata2$rain <- ifelse(data2$rain == TRUE, 1, 0)\n\n#################### 18????��?? ?????? \nrange(data1$class_orders)\ndata1_range <- (max(data1$class_orders) - min(data1$class_orders)) / 18\n\nrv <- seq(from = 20, by = data1_range, to = 422)\n\ndata1$class_orders <- as.numeric(cut(data1$class_orders, rv, label = c(1:18)))\ndata2$class_orders <- as.numeric(cut(data2$class_orders, rv, label = c(1:18)))\n\ntable(data1$class_orders)\ntable(data2$class_orders)\n\n######################### MAPE\nMAPE <- function(y, exp_y){\n  return( sum(abs(y - exp_y)/y)/length(y) * 100 )\n}\n\n######################### \ncalculate <- function(actual, predicted){\n  \n  predicted <- round(predicted)\n  res <- actual - predicted\n  res_table <- table(res)\n  \n  tp_range <- ifelse(-1 <= res & res <= 1, 1, 0)\n  fp_range <- ifelse(res > 1, 1, 0)\n  fn_range <- ifelse(res < -1, 1, 0)\n  \n  tp <- sum(tp_range) \n  fp <- sum(fp_range) \n  fn <- sum(fn_range) \n  \n  P <- tp / (tp + fp)\n  R <- tp / (tp + fn)\n  F_measure <- 2 * R * P / (R+P)\n  \n  cat(\"MAPE      : \", MAPE(actual, predicted), \"\\n\",\n      \"Precision : \", P, \"\\n\",\n      \"Recall    : \", R, \"\\n\",\n      \"F-Measure : \", F_measure, \"\\n\\n\")\n  \n}\n\n\n################### tree\ninstall.packages(\"tree\")\nlibrary(tree)\n\nattach(data1)\n\nmytree <- tree(class_orders~ isHoliday\n               + anniversary\n               #+ month\n               #+ weekday\n               #+ day\n               + holiday_order\n               + rain\n               + fog\n               + temp_highest\n               #+ LYSM_similarDates_avg_orders\n               #+ prediction_orders\n               #+ ES_orders_25\n               + ES_orders_75\n               #+ similarDates_movingAvg_orders\n               #+ currentFamilySavingCSI\n               #+ underlyingInflationRate\n               #+ importChangeRate\n               #+ football_national_cnt\n               + naverTrend_Shop_lastweek\n               ,data1)\n\nplot(mytree)\ntext(mytree, all = T)\n\npred <- predict(mytree, newdata = data2)\npred_round <- round(pred)\n\ncalculate(data2$class_orders, pred)\n\n",
+    "created" : 1481386038393.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3513444076",
+    "id" : "6C262565",
+    "lastKnownWriteTime" : 1481388177,
+    "last_content_update" : 1481388177,
+    "path" : "C:/Users/juyeon/Desktop/R/13주차/13주차/11.R",
+    "project_path" : "11.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

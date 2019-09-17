@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "read.csv(\"C:/Users/juyeon/Desktop/R/4주차\")\ngetwd()\n\npercapita <- read.csv(\"percapita.csv\", header=TRUE)\npercapita\n\nlibrary()\n\na = ceiling(rnorm(10, mean=2, sd=0.5))\na\nsort(table(a))\n\na = 1:10\na\nscale(a)\n\nmad\n\nquantile(a)\n\na <- c(3, 5, 12, 5, 8)\nb <- c(15, 25, 60, 25, 40)\nsd(a)\nsd(b)\n\nCV <- function(X) sd(x)/mean(x)\nCV(a)\nCV(b)\n\ninstall.packages(\"psych\")\nrequire(psych)\nskew(Mileage$City)\nkurtosi(Mileage$City)\n\nsample(10)\nsample(45, 6)\nsample(10, 3, replace=TRUE)\nsample(10, 3, prob=(1:10)/55)\n\n\n\n\n",
+    "created" : 1476344968319.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3831460892",
+    "id" : "AD77A1F5",
+    "lastKnownWriteTime" : 1476714210,
+    "last_content_update" : 1476714210917,
+    "path" : "C:/Users/juyeon/Desktop/R/4주차/10 4.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

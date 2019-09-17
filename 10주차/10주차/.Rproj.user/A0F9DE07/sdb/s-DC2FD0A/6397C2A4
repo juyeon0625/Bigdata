@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "head(gssdata)\nattach(gssdata)\n\nr <- rincome\ns <- satjob1\nj <- jobsecok\na <- age\n\nrs <- sd(r)^2\nss <- sd(s)^2\njs <- sd(j)^2\nas <- sd(a)^2\n\nin_r_s <- rs + ss\nin_r_j <- rs + js\nin_a_s <- as + ss\nin_a_j <- as + js\n\nrm <- mean(r)\nsm <- mean(s)\njm <- mean(j)\nam <- mean(a)\nall_sum <- rm + sm + jm + am\nmm <- all_sum/4\n\nout_r_s <- length(r) * (rm - mm)^2 \n          +length(s) * (sm - mm)^2\nout_r_j <- length(r) * (rm - mm)^2\n          +length(j) * (jm - mm)^2\nout_a_s <- length(a) * (am - mm)^2\n          +length(s) * (sm - mm)^2\nout_a_j <- length(a) * (am - mm)^2\n          +length(j) * (jm - mm)^2\n\ncor_ratio_r_s <- out_r_s / (in_r_s + out_r_s)\ncor_ratio_r_j <- out_r_j / (in_r_j + out_r_j)\ncor_ratio_a_s <- out_a_s / (in_a_s + out_a_s)\ncor_ratio_a_j <- out_a_j / (in_a_j + out_a_j)\n",
+    "created" : 1478156917422.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "640238751",
+    "id" : "6397C2A4",
+    "lastKnownWriteTime" : 1478536853,
+    "last_content_update" : 1478536853950,
+    "path" : "C:/Users/juyeon/Desktop/R/10주차/10주차/1.R",
+    "project_path" : "1.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

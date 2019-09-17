@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "cus1 <- c(1, 0, 1, 0, 1, 0, 1)\ncus2 <- c(1, 1, 1, 0, 0, 0, 1)\ncus3 <- c(1, 1, 0, 1, 1, 0, 1)\ncus4 <- c(1, 1, 1, 1, 0, 1, 1)\ncus5 <- c(0, 1, 0, 1, 1, 1, 0)\ncus6 <- c(0, 1, 0, 0, 1, 1, 1)\ncusa <- c(1, 0, 0, 1, 0, 0, 1)\n\ndata <- data.frame(rbind(cus1, cus2, cus3, cus4, cus5, cus6, cusa))\ncolnames(data) <- c(\"pro1\", \"pro2\", \"pro3\", \"pro4\", \"pro5\", \"pro6\", \"pro7\")\nattach(data)\n\n#####################확률 p\n\np <- function(x){\n  1/length(x) * sum(x[x==1])\n}\n\np(cus1)\np(cus2)\np(cus3)\np(cus4)\np(cus5)\np(cus6)\np(cusa)\n\n####################확률 p_ai\n\np_a1 <- 1/7 *2\np_a2 <- 1/7 *2\np_a3 <- 1/7 *3\np_a4 <- 1/7 *3\np_a5 <- 1/7 *1\np_a6 <- 1/7 *1\n\n##################가중치 w\n\nw <- function(pai, i){\n  up <- pai - p(cusa) * p(i)\n  down <- sqrt(p(cusa) * (1 - p(cusa))) * sqrt(p(i) * (1 - p(i)))\n  up/down\n}\n\nw(p_a1, cus1)\nw(p_a2, cus2)\nw(p_a3, cus3)\nw(p_a4, cus4)\nw(p_a5, cus5)\nw(p_a6, cus6)\n\n############## k\n\nk <- 1/sum(abs(c(w(p_a1, cus1), w(p_a2, cus2), w(p_a3, cus3),\n                 w(p_a4, cus4), w(p_a5, cus5), w(cusa, cus6))))\n\n#############평점 추정치 p\n\np <- function(data, j){\n  i <- length(data[1,])-1\n  b <- NULL\n  1:i\n  b <- NULL\n  for(x in 1:i){\n    b <- c(b, w(pai, x))\n  }\n  k * sum(b*data[1:(length(data[,1])-1),j])\n}\n",
+    "created" : 1479807260570.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "617391860",
+    "id" : "40355CF",
+    "lastKnownWriteTime" : 1479911086,
+    "last_content_update" : 1479911086024,
+    "path" : "C:/Users/juyeon/Desktop/R/12주차/12주차/3.R",
+    "project_path" : "3.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

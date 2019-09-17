@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "faithful -> Yellowstone\nhead(faithful)\n\nwaiting <- faithful[,2]\nrange(waiting)\n\ntable(waiting)\n\nattach(dataset)\ntable(Sex, Age)\n\nCar_Colors <- data.frame(Color - factor(), Percent = numeric())\nCar_Colors <- edit(Car_Colors)\nCar_Colors\nattach(Car_Colors)\npie(Percent)\npie(Percent, col=Color)\nnames(Percent) <- Color\npie(Percent, col=Color, main=\"Pie Graph of Auto Color Preferences\")\n\nbarplot(Percent, col=colors, main = \"Bar Chart of Auto Color Preferences\")\nattach(grades)\n\nattach(dataset)\nboxplot(Age, main = \"Boxplot for Age\")\nquizzes\nboxplot(quizzes)\n\nattach(faithful)\nhist(waiting)\n\nattach(Min_Wage)\nMin_Wage\nplot(Percent, type=\"o\", col=\"blue\", main=\"Minimum Wage\")\nplot(Year, Value, type=\"o\")\n\nattach(hours)\nhours\nplot(hours, GPA)\nplot(hours, GPA, abline(lm(GPA~hours)), main=\"Scatterplot of Hour and GPA\")\n\niris\nplot(iris)\n",
+    "created" : 1476170166678.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2643669751",
+    "id" : "64AC9F54",
+    "lastKnownWriteTime" : 1476195754,
+    "last_content_update" : 1476195754043,
+    "path" : "C:/Users/juyeon/Desktop/R/5주차/5주차/업1011수.R",
+    "project_path" : "업1011수.R",
+    "properties" : {
+        "tempName" : "Untitled3"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "sim = function (nreps) {\n  \n  commdata = list() #새 위원회에 대한 정보를 입력할 곳\n  commdata$countabsamecomm = 0\n  \n  for (rep in 1:nreps) {\n    commdata$whosleft = 1:20 #위원회를 뽑을 대상 \n    commdata$numabchosen = 0 #A, B중 이미 뽑힌 대상\n    \n    commdata = choosecomm (commdata, 5) \n    if (commdata$numabchosen > 0) next\n    \n    commdata = choosecomm(commdata, 4)\n    if (commdata$numabchosen > 0) next\n    \n    commdata = choosecomm(commdata, 3)\n  }\n  print(commdata$countabsamecomm/nreps)\n}\n\n\nchoosecomm = function(comdat, comsize)\n{\n  committee = sample(comdat$whosleft, comsize)\n  comdat$numabchosen = length(intersect(1:2, committee))\n\n  if (comdat$numabchosen == 2)\n    comdat$countabsamecomm = comdat$countabsamecomm + 1\n  \n  comdat$whosleft = setdiff(comdat$whosleft, committee)\n    \n  return(comdat)\n}\n\nfor(i in 1:10) sim(10)\nfor(i in 1:10) sim(100)\n\n",
+    "created" : 1475741419836.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1358284343",
+    "id" : "1EFDF582",
+    "lastKnownWriteTime" : 1476248150,
+    "last_content_update" : 1476248150608,
+    "path" : "C:/Users/juyeon/Desktop/R/5주차/5주차/4.R",
+    "project_path" : "4.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
